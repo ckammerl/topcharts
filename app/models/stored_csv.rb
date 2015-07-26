@@ -55,7 +55,7 @@ class StoredCSV
     return StoredCSV.where(price: 0.0).desc(:total_download).skip(num_skipped).limit(max_return)
   end
 
-  # top Grossing Apps (all apps) – list , sorted by their download revenue for today)
+  # top Grossing Apps (all apps) – list , sorted by their download revenue for "today"
   def self.get_all_apps_sorted_by_revenue(num_skipped, max_return)
     return StoredCSV.desc(:total_revenue).skip(num_skipped).limit(max_return)
   end
