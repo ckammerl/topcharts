@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root 'application#index'
+  get '*path' => 'application#index'
+
   get 'data' => 'stored_csv#show', :defaults => { format: :json }
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
