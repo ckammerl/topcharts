@@ -46,18 +46,50 @@ class StoredCSV
   # only Paid Apps (apps for which the price is greater than zero) – sorted by order of
   # download count for “today”, with the most downloaded app first
   def self.get_paid_apps_sorted_by_downloads(num_skipped, max_return)
-    return StoredCSV.where(:price.gt => 0.0).desc(:total_download).skip(num_skipped).limit(max_return)
+    entries = StoredCSV.where(:price.gt => 0.0).desc(:total_download).skip(num_skipped).limit(max_return)
+    return StoredCSV.cleanup_results(entries)
   end
 
   # only Free Apps (apps for which the price is zero) – sorted by order of download count
   # for “today”, with the most downloaded app first
   def self.get_free_apps_sorted_by_downloads(num_skipped, max_return)
-    return StoredCSV.where(price: 0.0).desc(:total_download).skip(num_skipped).limit(max_return)
+    entries = StoredCSV.where(price: 0.0).desc(:total_download).skip(num_skipped).limit(max_return)
+    return StoredCSV.cleanup_results(entries)
   end
 
   # top Grossing Apps (all apps) – list , sorted by their download revenue for "today"
   def self.get_all_apps_sorted_by_revenue(num_skipped, max_return)
-    return StoredCSV.desc(:total_revenue).skip(num_skipped).limit(max_return)
+    entries = StoredCSV.desc(:total_revenue).skip(num_skipped).limit(max_return)
+    return StoredCSV.cleanup_results(entries)
+  end
+
+  def self.cleanup_results(db_entries)
+    result = []
+    # app_ids = {}
+
+    db_entries.each_with_index do |elem, index|
+      # remove duplicates
+      # if app_ids.has_key?(elem[:app_id])
+      #   next
+      # else
+      #   app_ids[elem[:app_id]] = 1
+
+        # limit entry to current fields of interest
+        entry = Hash.new
+        entry[:rank] = index
+        entry[:icon] = elem[:app_icon]
+        entry[:title] = elem[:app_name]
+        entry[:url] = elem[:app_url]
+        entry[:company] = elem[:company]
+        entry[:category] = elem[:category]
+        entry[:num_stars] = elem[:rating]
+        entry[:num_ratings] = elem[:country_ratings]
+        entry[:price] = elem[:price]
+
+        result << entry
+      # end
+    end
+    return result
   end
 
 end
