@@ -8,7 +8,7 @@ class StoredCSV
 
     puts "Parsing CSV file #{file_path}"
     CSV.foreach(file_path, headers: true, header_converters: :symbol, converters: :all, encoding: 'utf-8') do |row|
-      hashified_row = row.to_hash
+      hashified_row = row.to_hash #converts CSV::Row instance into Ruby Hash instance
 
       # cleanup CSV download data
       if hashified_row[:iphone_downloads] == nil
@@ -38,7 +38,7 @@ class StoredCSV
       # create new row total_revenue
       hashified_row[:total_revenue] = hashified_row[:iphone_revenue] + hashified_row[:ipad_revenue]
 
-      instances << create!(hashified_row) #converts CSV::Row instance into Ruby Hash instance
+      instances << create!(hashified_row)
     end
     puts "Done"
   end
