@@ -1,0 +1,31 @@
+<div id="scrollArea">
+  <a id="top-topgrossing"></a>
+
+  <!-- A table that will contain a list of top grossing apps -->
+  <table class="table">
+    <!-- This will create a row for every app within the paidApps object -->
+    <tr ng-repeat="app in allApps">
+      <td class="rank">{{ app.rank }}</td>
+      <td class="icon"><img src="{{ app.icon }}"/></td>
+      <td>
+        <div class="info">
+          <ul>
+            <li class="title"><a target="_blank" href="{{app.url}}">{{ app.title }}</a></li>
+            <li class="company">{{ app.company }}</li>
+             <div class="rating">
+              <li><rating rating-value="{{ app.num_stars }}"></rating></li>
+              <li class="num-ratings">({{ app.num_ratings }})</li>
+            </div>
+          </ul>
+        </div>
+      </td>
+      <td class="price" ng-show="{{ app.price }}">{{ app.price }}</td>
+      <td class="price" ng-show="{{ !app.price }}">free</td>
+    </tr>
+  </table>
+
+  <div id="update-topgrossing"></div>
+</div> <!-- scrollArea -->
+
+
+
