@@ -12,4 +12,102 @@
  *
  */
 
+
  @import "angular/main";
+
+
+h3 {
+  text-align: center;
+}
+
+
+/* navigation */
+
+.nav.nav-pills li, .nav.nav-pills li a {
+  padding-right:0px;
+  padding-left: 0px;
+}
+
+.nav.nav-pills li a {
+  border: 2px solid #337ab7;
+  border-radius: 4px;
+}
+
+.nav-list-item {
+  width: 32.5%;
+  text-align: center;
+  font-size: 1em;
+}
+
+/* child view table */
+
+.table img {
+  width: 60px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.rank {
+  width: 2%;
+  vertical-align: middle !important;
+  padding-right: 0 !important;
+}
+
+.icon {
+  width: 2%;
+}
+
+.rank, .price, .company, .num-ratings {
+  color: #788484;
+}
+
+.title, .icon, .price {
+    vertical-align: middle !important;
+}
+
+.info {
+  width: 90%;
+}
+
+.info ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.title {
+  font-size: 1em !important;
+}
+
+.company, .star-rating, .num-ratings {
+  font-size: 0.8em;
+}
+
+.rating li {
+  display: inline-block;
+}
+
+.star-rating {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.filled {
+  color: #E65C00;
+}
+
+.price {
+  width: 4%;
+  padding-left: 0 !important;
+  font-size: 1em;
+}
+
+button {
+  color: #337ab;
+  margin: 10px;
+}
+
+#update-paid, #update-free, #update-topgrossing {
+  text-align: right;
+}
