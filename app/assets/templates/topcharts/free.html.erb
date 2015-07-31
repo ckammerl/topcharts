@@ -1,1 +1,28 @@
-<h2>free Topcharts View</h2>
+<div id="scrollArea">
+  <a id="top-free"></a>
+
+  <!-- A table that will contain a list of free apps -->
+  <table class="table">
+    <!-- This will create a row for every app within the paidApps object -->
+    <tr ng-repeat="app in freeApps">
+      <td class="rank">{{ app.rank }}</td>
+      <td class="icon"><img src="{{ app.icon }}"/></td>
+      <td>
+        <div class="info">
+          <ul>
+            <li class="title"><a target="_blank" href="{{app.url}}">{{ app.title }}</a></li>
+            <li class="company">{{ app.company }}</li>
+            <div class="rating">
+              <li><rating rating-value="{{ app.num_stars }}"></rating></li>
+              <li class="num-ratings">({{ app.num_ratings }})</li>
+            </div>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div id="update-free"></div>
+</div> <!-- scrollArea -->
+
+
