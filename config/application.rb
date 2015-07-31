@@ -23,6 +23,10 @@ module Topcharts
     # reference bootstrap styles / fonts
     config.assets.paths << Rails.root.join("lib","assets","bower_components","bootstrap-sass-official", "assets", "stylesheets")
     config.assets.paths << Rails.root.join("lib","assets","bower_components","bootstrap-sass-official", "assets", "fonts")
+    # reference font awesome styles / fonts
+    config.assets.paths << Rails.root.join("lib","assets","bower_components","fontawesome", "css")
+    config.assets.paths << Rails.root.join("lib","assets","bower_components","fontawesome", "scss")
+    config.assets.paths << Rails.root.join("lib","assets","bower_components","fontawesome", "fonts")
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

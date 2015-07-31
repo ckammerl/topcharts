@@ -7,7 +7,9 @@
       "angular": "latest",
       "angular-ui-router": "latest",
       "angular-animate": "latest",
-      "bootstrap-sass-official": "latest"
+      "bootstrap-sass-official": "latest",
+      "angular-resource": "latest",
+      "font-awesome": "latest"
     }
   },
   "vendor": {
