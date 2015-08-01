@@ -1,28 +1,33 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started ##
+1. Clone the repo `git clone https://github.com/ckammerl/topcharts.git`
+2. From the repo's directory, checkout the master branch `git checkout master`
+3. In terminal, run `mongod`
+4. In terminal, run `bundle install` & `rake bower:install`
+5. In terminal, run `rake db:seed` to populate the MongoDB database with example data from a CSV file.
+6. In terminal, run RoR server `rails s`
+7. Go to [http://localhost:3000](http://localhost:3000)
 
-Things you may want to cover:
+## Summary ##
+  > Topcharts is a web­based, full stack ‘approximation’ of the Apple App Store “Top Charts” page found on the iphone’s App Store.
 
-* Ruby version
+## Overview ##
+  > Topcharts provides a visual list of up to the top 400 apps in the app store for the United States for "today" (date set in CSV file), sorted in order based on the following criteria:
 
-* System dependencies
+* Paid Apps – sorted by order of download count for “today”, with the most downloaded app first
 
-* Configuration
+* Free Apps – sorted by order of download count for “today”, with the most downloaded app first
 
-* Database creation
+* Top Grossing Apps (all apps) – sorted by their download revenue for "today"
 
-* Database initialization
 
-* How to run the test suite
+## Tech stack ##
 
-* Services (job queues, cache servers, search engines, etc.)
+* Ruby on Rails 4.2
+
+* AngularJS 1.4.3
+
+* MongoDB/ Mongoid - runs at [http://localhost:27017](http://localhost:27017)
 
 * Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

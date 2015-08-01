@@ -12,12 +12,18 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-#mongoDB ODM
+# mongoDB ODM
 gem 'mongoid', '~> 4.0.0'
 # mongoid performance improvement
 gem 'bson_ext'
 
 gem 'responders', '~> 2.0'
+
+# Angular-Rails
+gem 'bower-rails'
+gem 'angular-rails-templates'
+# bug fix: update sprockets for angular-rails-templates usage
+gem 'sprockets', '2.12.3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

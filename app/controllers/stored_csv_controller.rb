@@ -1,7 +1,10 @@
 class StoredCsvController < ApplicationController
   respond_to :json
 
-  def show
+  def index
+
+    puts "in StoredCSV controller"
+
     type = params[:type]
     num_skip = params[:num_skip]
     limit_result = params[:limit_result]
