@@ -13,4 +13,4 @@
 /tmp
 
 /db/*.csv
-/lib/assets/bower_components
+/vendor/assets/bower_components
