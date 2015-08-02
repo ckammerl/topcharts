@@ -124,8 +124,6 @@ GEM
       railties (= 4.2.0)
       sprockets-rails
     rails-assets-angular (1.4.3)
-    rails-assets-angular-animate (1.4.3)
-      rails-assets-angular (= 1.4.3)
     rails-assets-angular-resource (1.4.3)
       rails-assets-angular (= 1.4.3)
     rails-assets-angular-ui-router (0.2.15)
@@ -211,7 +209,6 @@ DEPENDENCIES
   mongoid (~> 4.0.0)
   rails (= 4.2.0)
   rails-assets-angular!
-  rails-assets-angular-animate!
   rails-assets-angular-resource!
   rails-assets-angular-ui-router!
   rails_12factor
