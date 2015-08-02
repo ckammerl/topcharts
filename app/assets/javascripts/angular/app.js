@@ -1,6 +1,5 @@
 angular
     .module('topcharts', [
-        'ngAnimate',
         'ui.router',
         'templates',
         'ngResource'
