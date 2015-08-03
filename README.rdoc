@@ -1,25 +1,24 @@
 == README
 
+Visit https://boiling-eyrie-9480.herokuapp.com
+
 ## Getting Started ##
 1. Clone the repo `git clone https://github.com/ckammerl/topcharts.git`
 2. From the repo's directory, checkout the master branch `git checkout master`
 3. In terminal, run `mongod`
-4. In terminal, run `bundle install` & `rake bower:install`
-5. In terminal, run `rake db:seed` to populate the MongoDB database with example data from a CSV file.
+4. In terminal, run `bundle install`
+5. In terminal, run `rake db:seed` to populate the MongoDB database with example data from a CSV file
 6. In terminal, run RoR server `rails s`
-7. Go to [http://localhost:3000](http://localhost:3000)
+7. Go to http://localhost:3000
 
-## Summary ##
-  > Topcharts is a web­based, full stack ‘approximation’ of the Apple App Store “Top Charts” page found on the iphone’s App Store.
+## Summary ## 
+* Topcharts is a web­based, full stack ‘approximation’ of the Apple App Store “Top Charts” page found on the iphone’s App Store.
 
-## Overview ##
-  > Topcharts provides a visual list of up to the top 400 apps in the app store for the United States for "today" (date set in CSV file), sorted in order based on the following criteria:
-
-* Paid Apps – sorted by order of download count for “today”, with the most downloaded app first
-
-* Free Apps – sorted by order of download count for “today”, with the most downloaded app first
-
-* Top Grossing Apps (all apps) – sorted by their download revenue for "today"
+## Overview ## 
+* Topcharts responsive design provides a visual list of up to the top 400 apps in the app store for the United States for "today" (date set in CSV file), sorted in order based on the following criteria (respective list is shown on button click):
+1. Paid Apps – sorted by order of download count for “today”, with the most downloaded app first
+2. Free Apps – sorted by order of download count for “today”, with the most downloaded app first
+3. Top Grossing Apps (all apps) – sorted by their download revenue for "today"
 
 
 ## Tech stack ##
@@ -28,6 +27,5 @@
 
 * AngularJS 1.4.3
 
-* MongoDB/ Mongoid - runs at [http://localhost:27017](http://localhost:27017)
+* MongoDB/ Mongoid 4.0.0
 
-* Deployment instructions
