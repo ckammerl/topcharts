@@ -1,9 +1,8 @@
 angular
     .module('topcharts', [
-        'ngAnimate',
         'ui.router',
-        'templates',
-        'ngResource'
+        'ngResource',
+        'templates'
     ])
 
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {

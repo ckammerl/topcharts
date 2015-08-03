@@ -56,27 +56,27 @@ class StoredCSV
   # download count for “today”, with the most downloaded app first
   def self.get_paid_apps_sorted_by_downloads(num_skipped, max_return)
     entries = StoredCSV.where(:price.gt => 0.0).desc(:total_download).skip(num_skipped).limit(max_return)
-    return StoredCSV.cleanup_results(entries) # limit entry data to current fields of interest
+    return StoredCSV.cleanup_results(entries, num_skipped) # limit entry data to current fields of interest
   end
 
   # only Free Apps (apps for which the price is zero) – sorted by order of download count
   # for “today”, with the most downloaded app first
   def self.get_free_apps_sorted_by_downloads(num_skipped, max_return)
     entries = StoredCSV.where(price: 0.0).desc(:total_download).skip(num_skipped).limit(max_return)
-    return StoredCSV.cleanup_results(entries) # limit entry data to current fields of interest
+    return StoredCSV.cleanup_results(entries, num_skipped) # limit entry data to current fields of interest
   end
 
   # top Grossing Apps (all apps) – list , sorted by their download revenue for "today"
   def self.get_all_apps_sorted_by_revenue(num_skipped, max_return)
     entries = StoredCSV.desc(:total_revenue).skip(num_skipped).limit(max_return)
-    return StoredCSV.cleanup_results(entries) # limit entry data to current fields of interest
+    return StoredCSV.cleanup_results(entries, num_skipped) # limit entry data to current fields of interest
   end
 
-  def self.cleanup_results(db_entries)
+  def self.cleanup_results(db_entries, start_rank)
     result = []
     db_entries.each_with_index do |elem, index|
       entry = Hash.new
-      entry[:rank] = index + 1
+      entry[:rank] = index + start_rank + 1
       entry[:icon] = elem[:app_icon]
       entry[:title] = elem[:app_name]
       entry[:url] = elem[:app_url]

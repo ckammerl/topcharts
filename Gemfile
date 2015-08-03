@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bundler', '>= 1.8.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -17,13 +18,12 @@ gem 'mongoid', '~> 4.0.0'
 # mongoid performance improvement
 gem 'bson_ext'
 
+# respond_with data_type
 gem 'responders', '~> 2.0'
 
-# Angular-Rails
-gem 'bower-rails'
-gem 'angular-rails-templates'
-# bug fix: update sprockets for angular-rails-templates usage
-gem 'sprockets', '2.12.3'
+# styles
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'font-awesome-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -37,11 +37,23 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# Angular-Rails (rails-assets-bower_component_name)
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular'
+  gem 'rails-assets-angular-ui-router'
+  gem 'rails-assets-angular-resource'
+end
+
+# precompiles angular application templates into the template cache and cancels the need for ajax calls for templates
+gem 'angular-rails-templates'
+# bug fix: update sprockets for angular-rails-templates usage
+gem 'sprockets', '2.12.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Use Unicorn as the app server
+gem 'unicorn'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,3 +67,6 @@ group :development, :test do
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
