@@ -33,13 +33,13 @@ class StoredCSV
 
       # cleanup CSV revenue data
       if hashified_row[:iphone_revenue] != nil
-        hashified_row[:iphone_revenue] = hashified_row[:iphone_revenue].gsub("$", "").to_f
+        hashified_row[:iphone_revenue] = hashified_row[:iphone_revenue].gsub(/["$", ","]/, "").to_f
       else
         hashified_row[:iphone_revenue] = 0
       end
 
       if hashified_row[:ipad_revenue]  != nil
-        hashified_row[:ipad_revenue] = hashified_row[:ipad_revenue].gsub("$", "").to_f
+        hashified_row[:ipad_revenue] = hashified_row[:ipad_revenue].gsub(/["$", ","]/, "").to_f
       else
         hashified_row[:ipad_revenue] = 0
       end
